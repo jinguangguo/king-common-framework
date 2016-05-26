@@ -46,21 +46,32 @@
 
 	'use strict';
 	
-	var _subEllipsis = __webpack_require__(1);
+	__webpack_require__(1);
+	
+	var _subEllipsis = __webpack_require__(3);
 	
 	var _subEllipsis2 = _interopRequireDefault(_subEllipsis);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
-	console.log((0, _subEllipsis2.default)('我这里是很长的文本哦', 10)); /**
-	                                                            * @file
-	                                                            * @author jinguangguo
-	                                                            * @date 2016/5/25
-	                                                            */
+	/**
+	 * @file
+	 * @author jinguangguo
+	 * @date 2016/5/25
+	 */
+	
+	console.log((0, _subEllipsis2.default)('我这里是很长的文本哦', 10));
 
 /***/ },
 /* 1 */
 /***/ function(module, exports) {
+
+	// removed by extract-text-webpack-plugin
+
+/***/ },
+/* 2 */,
+/* 3 */
+/***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
@@ -69,7 +80,7 @@
 	});
 	
 	exports.default = function (value, number) {
-	    if (this.len(value) <= number) {
+	    if ((0, _len2.default)(value) <= number) {
 	        return value;
 	    }
 	
@@ -86,7 +97,7 @@
 	        c = value.charAt(i);
 	        subNum++;
 	
-	        if (this.len(c) === 2) {
+	        if ((0, _len2.default)(c) === 2) {
 	            count = count + 2;
 	        } else {
 	            count = count + 1;
@@ -97,21 +108,26 @@
 	        }
 	    }
 	
-	    return value.subvalueing(0, subNum) + '...';
+	    return value.substring(0, subNum) + '...';
 	};
 	
-	/**
-	 * @file
-	 * @author jinguangguo
-	 * @date 2016/5/23
-	 */
+	var _len = __webpack_require__(4);
 	
-	/**
-	 * 具有中文字符的长度(默认一个中文代表两个英文字符长度)
-	 * @param value
-	 * @returns {number}
-	 */
-	function len(value) {
+	var _len2 = _interopRequireDefault(_len);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+/***/ },
+/* 4 */
+/***/ function(module, exports) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+	
+	exports.default = function (value) {
 	    var reg = /[^\u0000-\u00FF]/; // 匹配非单字节字符
 	    var c = '';
 	    var count = 0;
@@ -124,14 +140,7 @@
 	        }
 	    }
 	    return count;
-	}
-	
-	/**
-	 * 字符串截取, 并在末尾添加"..."
-	 * @param value
-	 * @param number
-	 * @returns {*}
-	 */
+	};
 
 /***/ }
 /******/ ]);

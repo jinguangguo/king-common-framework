@@ -7,6 +7,8 @@
 ### tag目录
 > - gulp支持ES6: gulp_es6
 > - 添加子模块, 将公共库最为一个子模块进行引用: submodule
+> - less支持: wepack添加less支持(使用sourcemaps)
+
 
 ### 子模块更新
 ```shell

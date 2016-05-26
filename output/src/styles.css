@@ -1,0 +1,13 @@
+/**
+ * @file
+ * @author jinguangguo
+ * @date 2016/5/25
+ */
+.module-index {
+  color: red;
+}
+.module-index .tip {
+  border: 1px purple solid;
+}
+
+/*# sourceMappingURL=styles.css.map*/

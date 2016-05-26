@@ -4,8 +4,8 @@
  * @date 2016/5/25
  */
 
+var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var publicPath = '/output/src/';
-
 
 module.exports = {
     entry: {
@@ -18,7 +18,10 @@ module.exports = {
         publicPath: publicPath,
         filename: '[name].js'
     },
-    plugins: [],
+    plugins: [
+        // extract inline css into separate 'styles.css'
+        new ExtractTextPlugin('[name].css')
+    ],
     module: {
         loaders: [
             {
@@ -31,7 +34,16 @@ module.exports = {
             },
             {
                 test: /\.scss$/,
-                loaders: ["style", "css", "sass"]
+                loader: 'style!css!sass'
+            },
+            {
+                test: /\.less$/,
+                //loader: 'style!css!less'
+                loader: ExtractTextPlugin.extract(
+                    // activate source maps via loader query
+                    'css?sourceMap!' +
+                    'less?sourceMap'
+                )
             }
         ]
     },
