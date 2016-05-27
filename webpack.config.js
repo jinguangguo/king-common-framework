@@ -5,7 +5,7 @@
  */
 
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
-var publicPath = '/output/src/';
+var publicPath = '/app/js/';
 
 module.exports = {
     entry: {
@@ -18,10 +18,10 @@ module.exports = {
         publicPath: publicPath,
         filename: '[name].js'
     },
-    plugins: [
-        // extract inline css into separate 'styles.css'
-        new ExtractTextPlugin('[name].css')
-    ],
+    //plugins: [
+    //    // extract inline css into separate 'styles.css'
+    //    new ExtractTextPlugin('[name].css')
+    //],
     module: {
         loaders: [
             {
@@ -33,17 +33,12 @@ module.exports = {
                 }
             },
             {
-                test: /\.scss$/,
-                loader: 'style!css!sass'
-            },
-            {
-                test: /\.less$/,
-                //loader: 'style!css!less'
-                loader: ExtractTextPlugin.extract(
-                    // activate source maps via loader query
-                    'css?sourceMap!' +
-                    'less?sourceMap'
-                )
+                test: /(\.css|\.less)$/,
+                loader: 'style?sourceMap!css?sourceMap!less?sourceMap!autoprefixer?{browsers:["last 2 versions", "Firefox >= 20", "last 3 Safari versions", "last 2 Explorer versions"]}'
+                //loader: ExtractTextPlugin.extract(
+                //    // activate source maps via loader query
+                //    'css?sourceMap!less?sourceMap'
+                //)
             }
         ]
     },
