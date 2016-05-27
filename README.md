@@ -8,7 +8,7 @@
 > - gulp支持ES6: gulp_es6
 > - 添加子模块, 将公共库最为一个子模块进行引用: submodule
 > - less支持: wepack添加less支持
-
+> - svg文件转换iconfont的支持: iconfont
 
 ### 子模块更新
 ```shell
@@ -55,5 +55,11 @@ webpack的loader配置
 ```
 
 现在两种的使用方式, 直接link引入less文件, 同样可以在js中import对应的less文件()使用webpack, 主要是方便js引用相关的模块css, 使得组件更加内聚).
+
+多使用在head标签提那家link引入less文件的方式, 若使用js中importless文件的方式, 会出现闪屏的现象. 除非内容和样式文件同时被渲染.
+
+### 添加使用svg
+在/app/svg目录下添加对应的svg文件, 然后执行gulp iconfont生成新的字体文件和对应font样式文件
+
 
 
