@@ -9,7 +9,7 @@ var publicPath = '/app/js/';
 
 module.exports = {
     entry: {
-        index: './app/js/index.js'
+        index: ['./app/js/index.js']
     },
     debug: true,
     devtool: "source-map",
