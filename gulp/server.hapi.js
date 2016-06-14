@@ -16,7 +16,7 @@ import webpackConfigDev from './webpack/webpack.config.dev';
 import ip from 'ip';
 import getFileInfo from './util/file';
 
-gulp.task('server:start', function() {
+gulp.task('server:hapi', function() {
 
     const server = new Hapi.Server();
 

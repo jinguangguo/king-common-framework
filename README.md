@@ -62,4 +62,15 @@ webpack的loader配置
 在/app/svg目录下添加对应的svg文件, 然后执行gulp iconfont生成新的字体文件和对应font样式文件
 
 
+### 添加webpack-dev-server的热加载模式
+对于webpack管理的js, 当发生更改之后, 浏览器自动reload对应的更改, 且保持对应的状态
 
+```shell
+gulp server:hot
+````
+
+对于热加载模式, 无法使用proxy代理, 不带方便. 故同时支持非热加载的模式, 用于代理调试.
+
+```shell
+gulp server:hapi
+```

@@ -6,7 +6,7 @@
 
 import './gulp/iconfont';
 import './gulp/script';
-import './gulp/server';
+import './gulp/server.hapi';
 import './gulp/server.hot';
 
 
