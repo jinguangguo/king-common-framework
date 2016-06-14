@@ -6,12 +6,12 @@
 
 var path = require('path');
 
-var publicPath = '/app/build/';
+global.publicPath = '/app/build/';
 
-export default {
+module.exports = {
     output: {
-        path: path.resolve(__dirname, publicPath),
-        publicPath: publicPath,
+        path: path.resolve(__dirname, global.publicPath),
+        publicPath: global.publicPath,
         filename: '[name].js'
     },
     module: {
@@ -29,8 +29,5 @@ export default {
                 loader: 'style?sourceMap!css?sourceMap!less?sourceMap!autoprefixer?{browsers:["last 2 versions", "Firefox >= 20", "last 3 Safari versions", "last 2 Explorer versions"]}'
             }
         ]
-    },
-    plugins: [
-
-    ]
-}
+    }
+};

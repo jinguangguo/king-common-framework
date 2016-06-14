@@ -8,5 +8,5 @@
 import '../css/list.css';
 import subEllipsis from '../../king-util/src/subEllipsis';
 
-console.log(subEllipsis('还不错哦', 10));
+console.log(subEllipsis('还不错哦还不错哦', 10));
 
