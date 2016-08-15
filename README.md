@@ -16,7 +16,7 @@
 git submodule add <repository>
 
 # checkout 子模块
-git submodule update —init —recursive
+git submodule update —-init —-recursive
 ```
 
 ### 使用less
