@@ -7,9 +7,9 @@
 import gulp from 'gulp';
 import gulpWebpack from 'gulp-webpack';
 
-import webpackConfigDev from './webpack/webpack.config.dev';
+import webpackConfigDev from '../webpack/webpack.config.dev';
 
-gulp.task('script', function () {
+gulp.task('js', function () {
     return gulp
         .src('./app/js/index.js')
         .pipe(gulpWebpack(webpackConfigDev))
